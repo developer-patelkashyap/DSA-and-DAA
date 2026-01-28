@@ -281,5 +281,129 @@ int main() {
         cout << endl;
     }
 
+    //     A
+    //    ABA
+    //   ABCBA
+    //  ABCDCBA
+    // ABCDEDCBA
+    for(int i = 0; i <= n; i++) {
+        for (int s = 1; s <= n - i; s++){
+            cout << " ";
+        }
+
+        temp = 65;
+        for (int st = 1; st <= i; st++){
+            cout << char(temp);
+            temp ++;
+        }
+
+        temp -= 1;
+        for (int st = 1; st < i; st++){
+            temp --;
+            cout << char(temp);
+        }
+
+        cout << endl;
+    }
+
+    // E
+    // DE
+    // CDE
+    // BCDE
+    // ABCDE
+    for(int i = 0; i < n; i++) {
+        temp = 69 - i;
+        for(int j = 0; j <= i; j++) {
+            cout << char(temp);
+            temp ++;
+        }
+        cout << endl;
+    }
+
+    // **********
+    // ****  ****
+    // ***    ***
+    // **      **
+    // *        *
+    // *        *
+    // **      **
+    // ***    ***
+    // ****  ****
+    // **********
+    for(int i = n; i >= 1; i--) {
+        for(int j = 1; j <= i; j++) cout << "*";
+        for(int j = 1; j <= 2*(n-i); j++) cout << " ";
+        for(int j = 1; j <= i; j++) cout << "*";
+        cout << endl;
+    }
+
+    for(int i = 1; i <= n; i++) {
+        for(int j = 1; j <= i; j++) cout << "*";
+        for(int j = 1; j <= 2*(n-i); j++) cout << " ";
+        for(int j = 1; j <= i; j++) cout << "*";
+        cout << endl;
+    }
+
+    // *        *
+    // **      **
+    // ***    ***
+    // ****  ****
+    // **********
+    // ****  ****
+    // ***    ***
+    // **      **
+    // *        *
+    for(int i = 1; i <= n; i++) {
+        for(int j = 1; j <= i; j++) cout << "*";
+        for(int j = 1; j <= 2*(n-i); j++) cout << " ";
+        for(int j = 1; j <= i; j++) cout << "*";
+        cout << endl;
+    }
+
+    for(int i = n-1; i >= 1; i--) {
+        for(int j = 1; j <= i; j++) cout << "*";
+        for(int j = 1; j <= 2*(n-i); j++) cout << " ";
+        for(int j = 1; j <= i; j++) cout << "*";
+        cout << endl;
+    }
+
+    // *****
+    // *   *
+    // *   *
+    // *   *
+    // *****
+    for(int i = 1; i <= n; i++) {
+        for(int j = 1; j <= n; j++) {
+            if(i == 1 || i == n || j == 1 || j == n)
+                cout << "*";
+            else
+                cout << " ";
+        }
+        cout << endl;
+    }
+
+    // 5 5 5 5 5 5 5 5 5 
+    // 5 4 4 4 4 4 4 4 5 
+    // 5 4 3 3 3 3 3 4 5 
+    // 5 4 3 2 2 2 3 4 5 
+    // 5 4 3 2 1 2 3 4 5 
+    // 5 4 3 2 2 2 3 4 5 
+    // 5 4 3 3 3 3 3 4 5 
+    // 5 4 4 4 4 4 4 4 5 
+    // 5 5 5 5 5 5 5 5 5
+    int size = 2*n-1;
+    for(int i = 0; i < size; i++) {
+        for(int j = 0; j < size; j++) {
+            int top = i;
+            int left = j;
+            int right = size - 1 - j;
+            int bottom = size - 1 - i;
+
+            int dist = min(min(top, bottom), min(left, right));
+            cout << n - dist << " ";
+        }
+        cout << endl;
+    }
+
     return 0;
 }

@@ -1,4 +1,4 @@
-# DSA and DAA for Placements
+# DSA and DAA
 
 ## Pre Placement Test Schedule
 
